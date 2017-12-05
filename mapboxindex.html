@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title></title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.css' rel='stylesheet' />
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+
+</head>
+<body>
+
+<div id='map'></div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiYXJhd2FrODUiLCJhIjoiY2o2cXZrazVnMDJlODJxbjcxZTFmOHV5cCJ9.j0raV9ilyEAQzN2ACeNCHg';
+var map = new mapboxgl.Map({
+    container: 'map', // container id
+    style: 'mapbox://styles/arawak85/cj6rn7pko4lg92rnyx1pzhwck', // stylesheet location
+    center: [-6.740386, 54.641707], // starting position [lng, lat]
+    zoom: 7.91 // starting zoom
+});
+
+// Add zoom and rotation controls to the map.
+map.addControl(new mapboxgl.NavigationControl());
+
+
+map.setView([-6.740386, 54.641707], 17);
+
+var marker = L.marker([-6.740386, 54.641707], {
+    icon: L.mapbox.marker.icon({
+        'marker-color': '#f86767'
+    })
+});
+marker.addTo(map);
+
+</script>
+
+</body>
+</html>
